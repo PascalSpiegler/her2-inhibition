@@ -12,7 +12,7 @@ pip install -r requirements.txt
 
 ###  Launch the app
 ```
-streamlit run "HER2 Inhibition Predictor.py"
+streamlit run "HER2.py"
 ```
 
 ###  Credits
