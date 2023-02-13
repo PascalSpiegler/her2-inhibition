@@ -38,29 +38,28 @@ def build_model(input_data):
 
 # Page title
 st.markdown("""
-# HER2 Inhibition Predictor
+# HER2 Inhibition Predictor """)
 
-This app allows users to predict how strongly a molecule will inhibit HER2 (human epidermal growth factor receptor 2). 
+st.markdown("""
+<style>
+.big-font {
+    font-size:20px !important;
+}
+</style>""", unsafe_allow_html = True)
 
-HER2 is a protein that is overexpressed in around 25% of breast cancers. Therapies that specifically inhibit HER2 such as traztuzumab have recently proven to be effective, but newer and improved therapies with fewer side effects are still needed.
+st.markdown('<p class="big-font"> This app allows users to predict how strongly a molecule will inhibit HER2 (human epidermal growth factor receptor 2).</p>', unsafe_allow_html = True)
 
+st.markdown('<p class = "big-font"> HER2 is a protein that is overexpressed in around 25% of breast cancers. Therapies that specifically inhibit HER2 such as traztuzumab have recently proven to be effective, but newer and improved therapies with fewer side effects are still needed. </p>', unsafe_allow_html = True)
 
+st.markdown("""<p class = "big-font">This application will predict pIC50, a measure of how potently a molecule inhibits HER2 activity. Molecules with pIC50 values of 7+ are considered potent inhibitors. The model was trained using a large dataset of IC50 values obtained from <a href = "https://www.ebi.ac.uk/chembl/" >ChEMBL</a>, and molecular descriptors generated using the <a href = "https://onlinelibrary.wiley.com/doi/10.1002/jcc.21707">PaDEL software</a>. After testing multiple models, a hyperparameter-optimized Random Forest Regressor was used (R² value of 0.71 and MSE of 0.34).</p>""", unsafe_allow_html = True)
 
-This application will predict pIC50, a measure of how potently a molecule inhibits HER2 activity. Molecules with pIC50 values of 7+ are considered potent inhibitors. The model was trained using a large dataset of IC50 values obtained from [ChEMBL](https://www.ebi.ac.uk/chembl/), and molecular descriptors generated using the [PaDEL software](http://www.yapcwsoft.com/dd/padeldescriptor). After testing multiple models, a hyperparameter-optimized Random Forest Regressor was used (R² value of 0.71 and MSE of 0.34). 
-
-
-
-
-
-
-
-**Credits**
-- Streamlit template & resources from [Dr. Chanin Nantasenamat](https://data-professor.medium.com/).
-- [Source code](https://github.com/PascalSpiegler/her2-inhibition)
+st.markdown("""<p class = "big-font"><strong>Credits</strong></p>""", unsafe_allow_html = True)
 
 
-""")
 
+
+st.markdown('<ul><li class = "big-font"> Streamlit template & resources from <a href = "https://data-professor.medium.com/">Dr. Chanin Nantasenamat</a></li><li class = "big-font"><a href = "https://github.com/PascalSpiegler/her2-inhibition">Source Code</a></li>', unsafe_allow_html = True)
+                    
 
 
 # Sidebar
@@ -91,7 +90,7 @@ if st.sidebar.button('Predict'):
     st.write(desc.shape)
 
     # Read descriptor list used in previously built model
-    st.header('**Removing low variance features**')
+    st.header('**Removing features irrelevant to our model**')
     Xlist = list(pd.read_csv('descriptor_list.csv').columns)
     desc_subset = desc[Xlist]
     st.write(desc_subset)
