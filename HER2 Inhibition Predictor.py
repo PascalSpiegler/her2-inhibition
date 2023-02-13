@@ -50,6 +50,10 @@ This application will predict pIC50, a measure of how potently a molecule inhibi
 
 
 
+
+
+
+
 **Credits**
 - Streamlit template & resources from [Dr. Chanin Nantasenamat](https://data-professor.medium.com/).
 
@@ -95,4 +99,5 @@ if st.sidebar.button('Predict'):
     # Apply trained model to make prediction on query compounds
     build_model(desc_subset)
 else:
-    st.info('Upload input data in the sidebar to start!')
+    if not agree:
+        st.info('Upload input data in the sidebar to start!')
