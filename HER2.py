@@ -96,8 +96,10 @@ if st.sidebar.button('Predict'):
     st.write(desc_subset)
     st.write(desc_subset.shape)
 
+
     # Apply trained model to make prediction on query compounds
     build_model(desc_subset)
+    st.sidebar.write("Close sidebar if on mobile")
 else:
     if not agree:
         st.info('Upload input data in the sidebar to start!')
