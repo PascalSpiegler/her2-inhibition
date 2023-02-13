@@ -56,6 +56,7 @@ This application will predict pIC50, a measure of how potently a molecule inhibi
 
 **Credits**
 - Streamlit template & resources from [Dr. Chanin Nantasenamat](https://data-professor.medium.com/).
+- [Source code](https://github.com/PascalSpiegler/her2-inhibition)
 
 
 """)
