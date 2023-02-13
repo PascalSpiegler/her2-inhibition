@@ -16,7 +16,4 @@ streamlit run "HER2 Inhibition Predictor.py"
 ```
 
 ###  Credits
-
-```
 Thank you to Dr. Chanin Nantasenamat for his bioinformatics resources and Streamlit template.
-```
