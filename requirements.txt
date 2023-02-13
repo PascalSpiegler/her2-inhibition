@@ -1,2 +1,3 @@
 pandas<1.2
 base58==2.0.1
+sklearn
